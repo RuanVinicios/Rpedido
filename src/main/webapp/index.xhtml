@@ -5,9 +5,38 @@
       xmlns:f="http://java.sun.com/jsf/core"  
       xmlns:p="http://primefaces.org/ui"> 
     <h:head>
-        
+        <link rel="stylesheet" href="css/style.css"/>
     </h:head>
     <h:body>
-        Hello <p:spinner/>
+        <div style="width: 400px"> 
+            <h:form id="form">
+                <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+                <p:panelGrid id="panel" columns="2">
+
+                    <p:outputLabel>Nome: </p:outputLabel>
+                    <p:inputText id="nome" value="#{mbCadastrarProduto.produto.nome}" />
+
+                    <p:outputLabel>Descrição: </p:outputLabel>
+                    <p:inputTextarea rows="2" cols="21" value="#{mbCadastrarProduto.produto.descricao}" />
+
+                    <p:outputLabel>Marca: </p:outputLabel>
+                    <p:inputText value="#{mbCadastrarProduto.produto.marca}" />
+
+                    <p:outputLabel>Quantidade: </p:outputLabel>
+                    <p:spinner value="#{mbCadastrarProduto.produto.quantidade}" min="0" max ="100" />
+                    
+
+                    <p:outputLabel>Preço:</p:outputLabel>
+                    <p:inputNumber value="#{mbCadastrarProduto.produto.preco}" />
+
+                    <p></p>
+                    <p:commandButton value="Cadastrar" action="#{mbCadastrarProduto.adicionar()}" style="width: 230px !important;">
+                        
+                    </p:commandButton>
+
+
+                </p:panelGrid>
+            </h:form>
+        </div>
     </h:body>
 </html>
