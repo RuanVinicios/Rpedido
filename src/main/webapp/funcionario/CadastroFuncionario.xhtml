@@ -1,0 +1,41 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"  
+             xmlns:h="http://java.sun.com/jsf/html"    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <ui:define name="conteudo">
+         <h:form>  
+            <table class="tableCenter">                
+
+                <tr>
+                    <td><label>Nome:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <!--<input type="text"/>-->
+                        <h:inputText value="#{mbCadastrarFuncionario.funcionaio.nome}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Siape:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:inputText value="#{mbCadastrarFuncionario.funcionaio.siape}"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2">
+                        
+                        <center>
+                            <h:commandButton action="#{mbCadastrarFuncionario.adicionar()}" value="Cadastrar"/>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+</ui:decorate>  

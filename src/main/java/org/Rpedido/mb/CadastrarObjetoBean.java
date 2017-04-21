@@ -5,14 +5,15 @@
  */
 package org.Rpedido.mb;
 
-import org.Rpedido.dao.ProdutoDAO;
+import org.Rpedido.dao.ObjetoDAO;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.Rpedido.modelo.Produto;
-import org.Rpedido.dao.ProdutoDAO;
+import org.Rpedido.modelo.Objeto;
+import org.Rpedido.dao.ObjetoDAO;
+import org.Rpedido.modelo.Objeto;
         
 
 /**
@@ -20,23 +21,23 @@ import org.Rpedido.dao.ProdutoDAO;
  * @author Ruan
  */
 
-@Named(value = "mbCadastrarProduto")
+@Named(value = "mbCadastrarObjeto")
 @RequestScoped
-public class CadastrarProdutoBean {
+public class CadastrarObjetoBean {
     
-    Produto produto = new Produto();
+    Objeto objeto = new Objeto();
     
     @Inject
-    private ProdutoDAO produtoDAO;
+    private   ObjetoDAO objetoDAO;
     
     public void adicionar(){
-        produtoDAO.adicionar(produto);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Salvo com sucesso"));
+        objetoDAO.adicionar(objeto);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Cadastrado"));
+    //System.out.println(objeto);
     } 
     
-    public Produto getProduto(){
-        return produto; 
+    public Objeto getObjeto(){
+        return objeto; 
     }
-    
    
 }

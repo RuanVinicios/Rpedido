@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="org.Rpedido.modelo" v="4.2" rws="_14927768679299" cws="_14927768679299" sm="false" xs="false" id="_14927768679298" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="RequerintePK" abs="false" class="Requerinte" v="true" m="false" rootElement="_14927768679298" id="_1492776899775">
+        <jpa:ts e="true"/>
+        <jpa:ath>Ruan</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="nome" id="_149277692456612">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="tipo" id="_149277694229413">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="matricula" id="_149277694936614">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149277689982210">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Requerinte.findAll">
+            <jpa:query>Select e from Requerinte e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Requerinte.findByNome">
+            <jpa:query>Select r from Requerinte r where r.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Requerinte.findByTipo">
+            <jpa:query>Select r from Requerinte r where r.tipo=:tipo</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Requerinte.findByMatricula">
+            <jpa:query>Select r from Requerinte r where r.matricula=:matricula</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PedidoPK" abs="false" class="Pedido" v="true" m="false" rootElement="_14927768679298" id="_1492776984400">
+        <jpa:ts e="true"/>
+        <jpa:ath>Ruan</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="data" id="_149277700733717">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="hora" id="_149277706763918">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="observação" id="_149277711689119">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="situação" id="_149277713880820">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1492777440414" v="true" name="objetoes" id="_149277757304230">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1492777179140" v="true" name="funcionarios" id="_149277779385133">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1492776899775" v="true" name="requerintes" id="_149277783595034">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149277698440015">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pedido.findAll">
+            <jpa:query>Select e from Pedido e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByData">
+            <jpa:query>Select p from Pedido p where p.data=:data</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByHora">
+            <jpa:query>Select p from Pedido p where p.hora=:hora</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByObservação">
+            <jpa:query>Select p from Pedido p where p.observação=:observação</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findBySituação">
+            <jpa:query>Select p from Pedido p where p.situação=:situação</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="FuncionarioPK" abs="false" class="Funcionario" v="true" m="false" rootElement="_14927768679298" id="_1492777179140">
+        <jpa:ts e="true"/>
+        <jpa:ath>Ruan</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="nome" id="_149277741522223">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="siape" id="_149277743078124">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149277717914021">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Funcionario.findAll">
+            <jpa:query>Select e from Funcionario e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Funcionario.findByNome">
+            <jpa:query>Select f from Funcionario f where f.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Funcionario.findBySiape">
+            <jpa:query>Select f from Funcionario f where f.siape=:siape</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ObjetoPK" abs="false" class="Objeto" v="true" m="false" rootElement="_14927768679298" id="_1492777440414">
+        <jpa:ts e="true"/>
+        <jpa:ath>Ruan</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="nome" id="_149277746113927">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="tipo" id="_149277746902028">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149277744041425">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Objeto.findAll">
+            <jpa:query>Select e from Objeto e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Objeto.findByNome">
+            <jpa:query>Select o from Objeto o where o.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Objeto.findByTipo">
+            <jpa:query>Select o from Objeto o where o.tipo=:tipo</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14927768679299">
+            <i ref="_1492777440414" x="461" y="267">
+                <el/>
+            </i>
+            <i ref="_1492776899775" x="37" y="11">
+                <el/>
+            </i>
+            <i ref="_1492777179140" x="317" y="100">
+                <el/>
+            </i>
+            <i ref="_1492776984400" x="49" y="283">
+                <el/>
+            </i>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
