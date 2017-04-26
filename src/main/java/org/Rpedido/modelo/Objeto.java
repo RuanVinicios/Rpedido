@@ -3,6 +3,7 @@
  */
 package org.Rpedido.modelo;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import javax.persistence.Id;
  * @author Ruan
  */
 @Entity
-public class Objeto {
+public class Objeto implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -26,6 +26,9 @@ public class FuncionarioDAO {
     public void adicionar(Funcionario funcionario) {
         manager.persist(funcionario);
     }
+    
+  
+     
 
     public List<Funcionario> buscarTodos() {
         TypedQuery<Funcionario> query = manager.

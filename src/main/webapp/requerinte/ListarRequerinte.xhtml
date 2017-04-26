@@ -1,0 +1,45 @@
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"  
+             xmlns:h="http://java.sun.com/jsf/html"    
+             xmlns:p="http://primefaces.org/ui"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             template="template.xhtml"
+             xmlns:f="http://xmlns.jcp.org/jsf/core">  
+
+    <ui:define name="conteudo">
+
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+            <p:dataTable id="table" var="Requerinte" widgetVar="RequerunteTable"
+                         value="#{ListarRequerinte.requerinte}"
+                       paginator="true" rows="5"
+                       emptyMessage="nenhum registros" paginatorPosition="bottom"
+                       paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                       rowsPerPageTemplate="5,10">
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <h:outputText value="Pesquisar em todos os campos:" />
+                        <p:inputText id="globalFilter" onkeyup="PF('localTable').filter()" style="width:150px" placeholder="Pressione uma tecla"/>
+                    </p:outputPanel>
+                </f:facet>
+
+                <p:column headerText="ID">
+                    <h:outputText value="#{Requerinte.id}"/>
+                </p:column>
+                <p:column headerText="Nome" sortBy="#{Requerint.nome}"
+                          filterBy="#{Requerinte.nome}" filterMatchMode="contains">
+                    <h:outputText value="#{Requerinte.nome}"/>
+                </p:column>
+                <p:column headerText="Matricula">
+                    <h:outputText value="#{Requerinte.matricula}"/>
+                </p:column>
+                <p:column headerText="Tipo">
+                    <h:outputText value="#{Requerinte.tipo}"/>
+                </p:column>
+                <f:facet name="footer">
+                    todos os requerinte: #{ListarRequerinte.requerinte.size()}. requerinte
+                </f:facet>
+                </p:dataTable>
+
+        </h:form>        
+    </ui:define>
+</ui:decorate>  
